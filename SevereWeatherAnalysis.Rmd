@@ -1,8 +1,9 @@
 ---
 title: "Severe weather events,  population health and economic consequences"
 author: "Chahid Azarkan"
-output: html_document
-keep_md: true
+output: 
+  html_document: 
+    keep_md: yes
 ---
 
 #Synopsis
@@ -20,11 +21,20 @@ This analysis is answers the following two questions:
 
 
 #Data processing
-To be able to carry out the analysis, we need access to the data. 
-
+The following libraries are used for this analyis:
 ```{R}
-fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2"
+library(dplyr)
+library(data.table)
+```
 
+
+To be able to carry out the analysis the data needs to be donwloaded and imported.
+```{R import, cache=TRUE}
+fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2"
+temp <- tempfile()
+download.file(fileUrl,temp, method="curl")
+weather <- read.csv(temp, "household_power_consumption.txt"), sep = ";")
+unlink(temp)
 ```
 
 
