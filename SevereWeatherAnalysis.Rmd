@@ -7,7 +7,9 @@ output:
 ---
 
 #Synopsis
+In this report the fatalities, injuries and the impact on the economy of severe weather events in the U.S. are analyzed. In order to do this analysis, data from the U.S. National Oceanic and Atmospheric Administration's (NOAA) storm database is used.
 
+The results of this analyis can be found at the bottom of this report.
 
 #Introduction
 Severe weather events, like storms, can cause problems in different communites and municipalities to both public health and the economy. Preventing the effect of severe weather events is a key concern for the federal, state and municipal governments.
@@ -184,7 +186,7 @@ mean.t.dataeco <- summarise(dataeco, mean.of.t.damage=mean(croppropdmg, na.rm=TR
 mean.t.dataeco$mean.of.t.damage <- round(mean.t.dataeco$mean.of.t.damage, digits=0)
 ```
 
-Now that the sum of property, crop and total damage per event type are available, we can determin the top 5.
+Now that the sum of property, crop and total damage per event type are available, we can determine the top 5.
 
 ```{R top5 eco}
 sum.eco <- merge(sum.t.dataeco, sum.prop.dataeco, by="evtype")
@@ -208,7 +210,7 @@ mean.most.eco <- mean.eco[1:5]
 knitr::kable(mean.most.eco, col.names=c("Event type", "Average amount of damage \n to both property and crops", "Average amount of \n property damage", "Average amount of \n crop damage"), format ="html")
 ```
 
-Below a figure is given which shows the above stated tabels in a barplot.
+Below a figure is given which shows the above stated tables in a barplot.
 ```{R plot eco, cache=TRUE, fig.width=10, fig.height=8}
 par(mfcol=c(1,2), las = 2, mar = c(10,4,4,2) + 0.1)
 barplot(height=sum.most.eco$sum.of.t.damage, names.arg = wrap.labels(sum.most.eco$evtype,4), cex.axis=.8, cex.names=.8, xlab=" ", main = "Total amount of damage \n to property and crops")

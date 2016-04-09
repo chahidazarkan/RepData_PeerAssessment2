@@ -2,7 +2,9 @@
 Chahid Azarkan  
 
 #Synopsis
+In this report the fatalities, injuries and the impact on the economy of severe weather events in the U.S. are analyzed. In order to do this analysis, data from the U.S. National Oceanic and Atmospheric Administration's (NOAA) storm database is used.
 
+The results of this analyis can be found at the bottom of this report.
 
 #Introduction
 Severe weather events, like storms, can cause problems in different communites and municipalities to both public health and the economy. Preventing the effect of severe weather events is a key concern for the federal, state and municipal governments.
